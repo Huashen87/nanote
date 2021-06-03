@@ -1,0 +1,95 @@
+.note-page {
+  padding: 10px 20px;
+}
+
+.note-page .title {
+  padding: 5px;
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.note-page .tags {
+  margin: 10px auto;
+  padding: 5px 0;
+  min-width: calc(100% - 40px);
+  width: auto;
+  display: flex;
+  justify-content: flex-start;
+  background-color: #d4d4d4;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.note-page .tag {
+  width: auto;
+  margin: auto 5px;
+  padding: 3px 5px;
+  background-color: #000000;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.note-page .tricky-space {
+  min-width: 1px;
+}
+
+.note-page .note-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.note-page .updated-at {
+  font-size: 16px;
+  color: #3d3d3d;
+  margin-top: 5px;
+}
+
+.note-page .author {
+  padding: 5px;
+  width: max-content;
+  text-align: left;
+  display: flex;
+  justify-content: left;
+  background-color: #d4d4d4;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000000;
+}
+
+.note-page .author-image {
+  width: 50px;
+  height: 50px;
+  margin: auto 5px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #878787;
+  border-width: 2px;
+}
+
+.note-page .author-info {
+  font-size: 18px;
+  margin: 5px 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.note-page .author-id {
+  font-size: 16px;
+  color: #3d3d3d;
+}
+
+.note-page .author-name {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.note-page .content {
+  margin: 15px auto;
+  font-size: 24px;
+  text-align: left;
+  white-space: pre-wrap;
+}

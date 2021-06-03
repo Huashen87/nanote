@@ -19,6 +19,8 @@ body {
   width: 100vw;
   height: 100vh;
   text-align: center;
+  font-weight: 300;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 .test {
