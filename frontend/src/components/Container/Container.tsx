@@ -23,6 +23,12 @@ function Container() {
         <Route path="/new-note">
           <h1>撰寫筆記</h1>
         </Route>
+        <Route path="/user/:id">
+          <h1>個人資料</h1>
+        </Route>
+        <Route path="/edit-profile">
+          <h1>編輯個人資料</h1>
+        </Route>
       </Switch>
     </div>
   );

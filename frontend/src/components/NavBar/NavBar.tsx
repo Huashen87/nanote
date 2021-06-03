@@ -89,7 +89,7 @@ function MainLogo() {
 function UserProfile() {
   return (
     <div className="userProfile">
-      <span className="userProfile-circle"></span>
+      <Link className="userProfile-circle" to="/user/NanoteUser"></Link>
     </div>
   );
 }
