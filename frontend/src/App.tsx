@@ -1,8 +1,15 @@
+import NavBar from './components/NavBar/NavBar';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Container from './components/Container/Container';
+
 function App() {
   return (
-    <div className="App">
-      <h1>Nanote</h1>
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Container />
+      </div>
+    </Router>
   );
 }
 
