@@ -6,6 +6,9 @@
   padding: 5px;
   font-size: 48px;
   font-weight: 400;
+  max-width: 100%;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 }
 
 .note-page .tags {
@@ -88,8 +91,12 @@
 }
 
 .note-page .content {
-  margin: 15px auto;
-  font-size: 24px;
+  font-size: 20px;
   text-align: left;
+}
+
+.note-page .content p,
+.note-page .content pre,
+.note-page .content code {
   white-space: pre-wrap;
 }
