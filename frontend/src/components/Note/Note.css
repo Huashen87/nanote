@@ -97,6 +97,13 @@
 
 .note-page .content p,
 .note-page .content pre,
-.note-page .content code {
+.note-page .content code,
+.note-page .content a {
   white-space: pre-wrap;
+  color: #000000;
+}
+
+.note-page .content blockquote {
+  background-color: #d4d4d4;
+  border-radius: 5px;
 }
