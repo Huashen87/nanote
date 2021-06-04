@@ -1,4 +1,5 @@
 import { Switch, Route } from 'react-router';
+import NewNote from '../NewNote/NewNote';
 import Note from '../Note/Note';
 import './Container.css';
 
@@ -23,7 +24,7 @@ function Container() {
             <h1>關注中的筆記</h1>
           </Route>
           <Route path="/new-note">
-            <h1>撰寫筆記</h1>
+            <NewNote />
           </Route>
           <Route path="/user/:id">
             <h1>個人資料</h1>
