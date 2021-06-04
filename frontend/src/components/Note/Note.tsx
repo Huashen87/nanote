@@ -1,6 +1,6 @@
 import Content from '../Content/Content';
 import Tags, { Tag } from '../Tags/Tags';
-import Info, { InfoProps, AuthorInfo } from '../Info/Info';
+import Info, { AuthorInfo } from '../Info/Info';
 import './Note.css';
 
 interface NoteData {
