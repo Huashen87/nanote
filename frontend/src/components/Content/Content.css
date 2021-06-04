@@ -1,0 +1,17 @@
+.content {
+  font-size: 20px;
+  text-align: left;
+}
+
+.content p,
+.content pre,
+.content code,
+.content a {
+  white-space: pre-wrap;
+  color: #000000;
+}
+
+.content blockquote {
+  background-color: #d4d4d4;
+  border-radius: 5px;
+}

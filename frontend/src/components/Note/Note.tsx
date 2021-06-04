@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+import Content from '../Content/Content';
+import Tags, { Tag } from '../Tags/Tags';
+import Info, { InfoProps, AuthorInfo } from '../Info/Info';
 import './Note.css';
-import Markdown from 'react-markdown';
 
 interface NoteData {
   title: string;
@@ -8,16 +9,6 @@ interface NoteData {
   author: AuthorInfo;
   updatedAt: Date;
   content: string;
-}
-
-interface Tag {
-  tagName: string;
-}
-
-interface AuthorInfo {
-  id: string;
-  name: string;
-  image: string;
 }
 
 function Note(props: { id: string }) {
@@ -64,50 +55,6 @@ function Note(props: { id: string }) {
 function Title(props: { title: string }) {
   const { title } = props;
   return <div className="title">{title}</div>;
-}
-
-function Tags(props: { tags: Tag[] }) {
-  const { tags } = props;
-  return (
-    <div className="tags">
-      {tags.map((tag, index) => (
-        <Link key={index} className="tag" to={'/tags/' + tag.tagName}>
-          {tag.tagName}
-        </Link>
-      ))}
-      <div className="tricky-space"></div>
-    </div>
-  );
-}
-
-interface InfoProps {
-  author: AuthorInfo;
-  updatedAt: Date;
-}
-
-function Info(props: InfoProps) {
-  const {
-    author: { id, name, image },
-    updatedAt,
-  } = props;
-  return (
-    <div className="note-info">
-      <Link className="author" to={'/user/' + id}>
-        <img className="author-image" src={image} alt=""></img>
-        <div className="author-info">
-          <div className="author-id">@{id}</div>
-          <div className="author-name">{name}</div>
-        </div>
-      </Link>
-      <div className="updated-at">最後更新於 : {updatedAt.toLocaleDateString()}</div>
-    </div>
-  );
-}
-
-export function Content(props: { content: string }) {
-  const { content } = props;
-
-  return <Markdown className="content" children={content} />;
 }
 
 export default Note;

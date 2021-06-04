@@ -1,0 +1,51 @@
+.note-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.updated-at {
+  font-size: 16px;
+  color: #3d3d3d;
+  margin-top: 5px;
+}
+
+.author {
+  padding: 5px;
+  width: max-content;
+  text-align: left;
+  display: flex;
+  justify-content: left;
+  background-color: #d4d4d4;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000000;
+}
+
+.author-image {
+  width: 50px;
+  height: 50px;
+  margin: auto 5px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #878787;
+  border-width: 2px;
+}
+
+.author-info {
+  font-size: 18px;
+  margin: 5px 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.author-id {
+  font-size: 16px;
+  color: #3d3d3d;
+}
+
+.author-name {
+  font-size: 20px;
+  font-weight: 500;
+}
