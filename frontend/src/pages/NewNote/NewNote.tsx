@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from '../../components/Button/Button';
-import InputField from '../../components/InputField/InputField';
-import './NewNote.css';
+import InputField from '../../components/Input/Input';
+import { StyledNewNote } from '../../components/styles';
 
 function NewNote() {
   const [title, setTitle] = useState<string>('');
@@ -12,13 +12,14 @@ function NewNote() {
   };
 
   return (
-    <div className="new-note">
+    <StyledNewNote>
       <InputField
         className="title"
         type="text"
         value={title}
         setValue={setTitle}
         placeholder="輸入筆記標題"
+        inNote={true}
       />
       <hr />
       <InputField
@@ -27,10 +28,11 @@ function NewNote() {
         value={content}
         setValue={setContent}
         placeholder="輸入筆記內容"
+        inNote={true}
       />
       <hr />
       <Button onClick={submitNote} text="發佈筆記" />
-    </div>
+    </StyledNewNote>
   );
 }
 

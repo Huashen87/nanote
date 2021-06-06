@@ -1,17 +1,19 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './NavBar.css';
+import { StyledNavBar, MainLogo, UserProfile, StyledHamburger, MenuBox } from '../styles';
 
 function NavBar() {
   const [visible, setVisible] = useState<boolean>(false);
 
   return (
     <>
-      <div className="navbar">
+      <StyledNavBar>
         <Hamburger visible={visible} setVisible={setVisible} />
-        <MainLogo />
-        <UserProfile />
-      </div>
+        <MainLogo children="Nanote" />
+        <UserProfile>
+          <Link className="user-image" to="/user/NanoteUser" />
+        </UserProfile>
+      </StyledNavBar>
       <Menu visible={visible} setVisible={setVisible} />
     </>
   );
@@ -24,14 +26,10 @@ interface HamburgerProps {
 
 function Hamburger(props: HamburgerProps) {
   const { visible, setVisible } = props;
-  const menuButtonClassName = 'menu__btn' + (visible ? ' checked' : '');
   return (
-    <div className="hamburger-menu">
-      <input id="menu__toggle" type="checkbox" onClick={() => setVisible(!visible)} />
-      <label className={menuButtonClassName} htmlFor="menu__toggle">
-        <span></span>
-      </label>
-    </div>
+    <StyledHamburger checked={visible}>
+      <label onClick={() => setVisible(!visible)} children={<span />} />
+    </StyledHamburger>
   );
 }
 
@@ -42,7 +40,6 @@ interface HamburgerMenuProps {
 
 function Menu(props: HamburgerMenuProps) {
   const { visible, setVisible } = props;
-  const menuClassName = 'menu__box' + (visible ? ' show' : '');
   const mockMenuItems: MenuItemInfo[] = [
     { itemName: '主頁', to: '/' },
     { itemName: '我的筆記', to: '/my-notes' },
@@ -51,13 +48,15 @@ function Menu(props: HamburgerMenuProps) {
     { itemName: '關注中的筆記', to: '/following-notes' },
     { itemName: '撰寫筆記', to: '/new-note' },
   ];
+
   const menuItems = mockMenuItems;
+
   return (
-    <ul className={menuClassName}>
+    <MenuBox visible={visible}>
       {menuItems.map((item, index) => {
         return <MenuItem key={index} menuItem={item} setVisible={setVisible} />;
       })}
-    </ul>
+    </MenuBox>
   );
 }
 
@@ -72,25 +71,11 @@ interface MenuItemProps {
 }
 
 function MenuItem(props: MenuItemProps) {
-  const { menuItem, setVisible } = props;
+  const { menuItem: item, setVisible } = props;
   return (
-    <li>
-      <Link className="menu__item" to={menuItem.to} onClick={() => setVisible(false)}>
-        {menuItem.itemName}
-      </Link>
-    </li>
-  );
-}
-
-function MainLogo() {
-  return <div className="mainLogo">Nanote</div>;
-}
-
-function UserProfile() {
-  return (
-    <div className="userProfile">
-      <Link className="userProfile-circle" to="/user/NanoteUser"></Link>
-    </div>
+    <li
+      children={<Link to={item.to} onClick={() => setVisible(false)} children={item.itemName} />}
+    />
   );
 }
 

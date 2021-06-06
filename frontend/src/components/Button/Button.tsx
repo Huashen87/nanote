@@ -1,4 +1,4 @@
-import './Button.css';
+import { StyledButton } from '../styles';
 
 interface ButtonProps {
   onClick: Function;
@@ -9,11 +9,7 @@ function Button(props: ButtonProps) {
   const { onClick, text } = props;
   const handleOnClick = () => onClick();
 
-  return (
-    <button className="button" onClick={handleOnClick}>
-      {text}
-    </button>
-  );
+  return <StyledButton onClick={handleOnClick}>{text}</StyledButton>;
 }
 
 export default Button;

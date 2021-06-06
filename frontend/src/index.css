@@ -1,8 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  width: 100vw;
-  height: 100vh;
+  width: auto;
+  height: auto;
   overflow-x: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -21,8 +21,4 @@ body {
   text-align: center;
   font-weight: 300;
   font-family: 'Noto Sans TC', sans-serif;
-}
-
-.test {
-  height: 3000px;
 }

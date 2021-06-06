@@ -1,7 +1,7 @@
 import Content from '../Content/Content';
 import Tags, { Tag } from '../Tags/Tags';
 import Info, { AuthorInfo } from '../Info/Info';
-import './Note.css';
+import { StyledNote } from '../styles';
 
 interface NoteData {
   title: string;
@@ -43,18 +43,13 @@ function Note(props: { id: string }) {
   const data: NoteData = mockData;
 
   return (
-    <div className="note-page">
-      <Title title={data.title} />
+    <StyledNote>
+      <div className="title">{data.title}</div>
       <Tags tags={data.tags} />
       <Info author={data.author} updatedAt={data.updatedAt} />
       <Content content={data.content} />
-    </div>
+    </StyledNote>
   );
-}
-
-function Title(props: { title: string }) {
-  const { title } = props;
-  return <div className="title">{title}</div>;
 }
 
 export default Note;

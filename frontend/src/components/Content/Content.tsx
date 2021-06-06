@@ -1,10 +1,9 @@
 import Markdown from 'react-markdown';
-import './Content.css';
-
+import { StyledMarkdown } from '../styles';
 function Content(props: { content: string }) {
   const { content } = props;
 
-  return <Markdown className="content" children={content} />;
+  return <StyledMarkdown children={<Markdown children={content} />} />;
 }
 
 export default Content;

@@ -1,12 +1,12 @@
 import { Switch, Route } from 'react-router';
+import { StyledContainer } from '../../components/styles';
 import NewNote from '../NewNote/NewNote';
 import Note from '../Note/Note';
-import './Container.css';
 
 function Container() {
   return (
-    <div className="container">
-      <div className="wrapper">
+    <StyledContainer>
+      <div>
         <Switch>
           <Route exact path="/">
             <h1>主頁</h1>
@@ -43,7 +43,7 @@ function Container() {
           </Route>
         </Switch>
       </div>
-    </div>
+    </StyledContainer>
   );
 }
 

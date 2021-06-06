@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './Tags.css';
+import { StyledTags } from '../styles';
 
 export interface Tag {
   tagName: string;
@@ -8,14 +8,12 @@ export interface Tag {
 function Tags(props: { tags: Tag[] }) {
   const { tags } = props;
   return (
-    <div className="tags">
+    <StyledTags>
       {tags.map((tag, index) => (
-        <Link key={index} className="tag" to={'/tags/' + tag.tagName}>
-          {tag.tagName}
-        </Link>
+        <Link key={index} to={'/tags/' + tag.tagName} children={tag.tagName} />
       ))}
-      <div className="tricky-space"></div>
-    </div>
+      <span />
+    </StyledTags>
   );
 }
 
