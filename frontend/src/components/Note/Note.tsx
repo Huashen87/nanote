@@ -44,7 +44,7 @@ function Note(props: { id: string }) {
 
   return (
     <StyledNote>
-      <div className="title">{data.title}</div>
+      <span>{data.title}</span>
       <Tags tags={data.tags} />
       <Info author={data.author} updatedAt={data.updatedAt} />
       <Content content={data.content} />

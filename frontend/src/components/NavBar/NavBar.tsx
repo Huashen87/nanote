@@ -9,10 +9,8 @@ function NavBar() {
     <>
       <StyledNavBar>
         <Hamburger visible={visible} setVisible={setVisible} />
-        <MainLogo children="Nanote" />
-        <UserProfile>
-          <Link className="user-image" to="/user/NanoteUser" />
-        </UserProfile>
+        <MainLogo children={<Link to="/" children="Nanote" />} />
+        <UserProfile children={<Link to="/user/NanoteUser" />} />
       </StyledNavBar>
       <Menu visible={visible} setVisible={setVisible} />
     </>

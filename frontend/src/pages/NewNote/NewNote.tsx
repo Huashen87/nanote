@@ -14,7 +14,6 @@ function NewNote() {
   return (
     <StyledNewNote>
       <InputField
-        className="title"
         type="text"
         value={title}
         setValue={setTitle}
@@ -23,7 +22,6 @@ function NewNote() {
       />
       <hr />
       <InputField
-        className="content"
         type="textarea"
         value={content}
         setValue={setContent}

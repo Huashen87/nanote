@@ -71,7 +71,7 @@ export const TextArea = styled.textarea<{ inNote: boolean }>`
   width: 100%;
   padding: 0;
   height: 100%;
-  min-height: 50vh;
+  min-height: calc(100vh - 284px);
   font-family: 'Noto Sans TC', sans-serif;
   resize: none;
   overflow-y: hidden;
@@ -144,11 +144,15 @@ export const MainLogo = styled.div`
   font-size: 64px;
   font-weight: 500;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  > a {
+    text-decoration: none;
+    color: #000000;
+  }
 `;
 
 export const UserProfile = styled.div`
   margin: auto 30px;
-  .user-image {
+  > a {
     height: 50px;
     width: 50px;
     background-color: #bbb;
@@ -270,7 +274,7 @@ export const StyledMarkdown = styled.div`
 export const StyledNote = styled.div`
   padding: 10px 20px;
 
-  .title {
+  > span {
     padding: 5px;
     font-size: 48px;
     font-weight: 400;
