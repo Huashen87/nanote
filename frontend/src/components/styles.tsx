@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledButton = styled.button`
+export const Button = styled.button`
   margin: 10px auto;
   background-color: #acacac;
   color: #000000;
@@ -66,7 +66,7 @@ export const Author = styled.div`
   }
 `;
 
-export const TextArea = styled.textarea<{ inNote: boolean }>`
+export const StyledTextArea = styled.textarea<{ inNote: boolean }>`
   margin: 10px auto;
   width: 100%;
   padding: 0;
@@ -74,6 +74,8 @@ export const TextArea = styled.textarea<{ inNote: boolean }>`
   min-height: calc(100vh - 284px);
   font-family: 'Noto Sans TC', sans-serif;
   resize: none;
+  word-wrap: break-word;
+  white-space: pre-wrap;
   overflow-y: hidden;
   ${({ inNote }) =>
     inNote
@@ -91,7 +93,7 @@ export const TextArea = styled.textarea<{ inNote: boolean }>`
   `}
 `;
 
-export const Input = styled.input<{ inNote: boolean }>`
+export const StyledInput = styled.input<{ inNote: boolean }>`
   margin: 10px auto;
   padding: 0;
   width: 100%;
@@ -113,7 +115,7 @@ export const Input = styled.input<{ inNote: boolean }>`
   `}
 `;
 
-export const StyledNewNote = styled.div`
+export const StyledNewNote = styled.form`
   padding: 10px 20px;
   hr {
     margin-top: 7px;

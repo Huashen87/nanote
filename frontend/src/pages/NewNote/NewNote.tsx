@@ -1,19 +1,20 @@
-import { useState } from 'react';
-import Button from '../../components/Button/Button';
-import InputField from '../../components/Input/Input';
-import { StyledNewNote } from '../../components/styles';
+import React, { useState } from 'react';
+import Input from '../../components/Input/Input';
+import { StyledNewNote, Button } from '../../components/styles';
+import Textarea from '../../components/Textarea';
 
 function NewNote() {
   const [title, setTitle] = useState<string>('');
   const [content, setContent] = useState<string>('');
 
-  const submitNote = () => {
+  const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     console.log({ title, content });
   };
 
   return (
-    <StyledNewNote>
-      <InputField
+    <StyledNewNote onSubmit={handleOnSubmit}>
+      <Input
         type="text"
         value={title}
         setValue={setTitle}
@@ -21,15 +22,9 @@ function NewNote() {
         inNote={true}
       />
       <hr />
-      <InputField
-        type="textarea"
-        value={content}
-        setValue={setContent}
-        placeholder="輸入筆記內容"
-        inNote={true}
-      />
+      <Textarea value={content} setValue={setContent} placeholder="輸入筆記內容" inNote={true} />
       <hr />
-      <Button onClick={submitNote} text="發佈筆記" />
+      <Button type="submit" children="發佈筆記" />
     </StyledNewNote>
   );
 }
