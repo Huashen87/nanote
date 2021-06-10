@@ -1,5 +1,5 @@
 import Markdown from 'react-markdown';
-import { StyledMarkdown } from '../styles';
+import { StyledMarkdown } from './styles';
 function Content(props: { content: string }) {
   const { content } = props;
 

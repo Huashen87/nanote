@@ -1,7 +1,7 @@
-import Content from '../Content/Content';
-import Tags, { Tag } from '../Tags/Tags';
-import Info, { AuthorInfo } from '../Info/Info';
-import { StyledNote } from '../styles';
+import Content from './Content';
+import Tags, { Tag } from './Tags';
+import Info, { AuthorInfo } from './Info';
+import { StyledNote } from './styles';
 
 interface NoteData {
   title: string;

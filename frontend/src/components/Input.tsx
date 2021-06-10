@@ -1,4 +1,4 @@
-import { StyledInput } from '../styles';
+import { StyledInput } from './styles';
 interface InputProps {
   type?: 'text' | 'password';
   value: string;

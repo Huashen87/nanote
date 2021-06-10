@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Author, NoteInfo, UpdateAt } from '../styles';
+import { Author, NoteInfo, UpdateAt } from './styles';
 
 export interface AuthorInfo {
   id: string;

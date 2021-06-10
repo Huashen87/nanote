@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { StyledNavBar, MainLogo, UserProfile, StyledHamburger, MenuBox } from '../styles';
+import { StyledNavBar, MainLogo, UserProfile, StyledHamburger, MenuBox } from './styles';
 
 function NavBar() {
   const [visible, setVisible] = useState<boolean>(false);

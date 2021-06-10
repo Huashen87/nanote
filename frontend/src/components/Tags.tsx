@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { StyledTags } from '../styles';
+import { StyledTags } from './styles';
 
 export interface Tag {
   tagName: string;
