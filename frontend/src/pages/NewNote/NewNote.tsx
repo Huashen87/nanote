@@ -17,6 +17,8 @@ function NewNote() {
 
   const handleRealOnSubmit = () => {
     console.log({ title, content });
+    setTitle('');
+    setContent('');
     setShowModal(false);
   };
 
@@ -30,7 +32,7 @@ function NewNote() {
   return (
     <>
       <Modal showModal={showModal} setShowModal={setShowModal}>
-        <PreviewTitle>預覽筆記內容</PreviewTitle>
+        <PreviewTitle children="預覽筆記內容" />
         <PreviewContent children={<Content content={content} />} />
         <Button onClick={handleRealOnSubmit} children="確定送出" />
       </Modal>
