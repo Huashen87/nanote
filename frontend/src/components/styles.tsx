@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Button = styled.button`
   margin: 10px auto;
@@ -196,19 +196,21 @@ export const StyledHamburger = styled.div<{ checked: boolean }>`
 
   ${({ checked }) =>
     checked
-      ? `label > span {
-  transform: rotate(45deg);
-}
+      ? `
+      label > span {
+        transform: rotate(45deg);
+      }
 
-label > span::before {
-  top: 0;
-  transform: rotate(0);
-}
+      label > span::before {
+        top: 0;
+        transform: rotate(0);
+      }
 
-label > span::after {
-  top: 0;
-  transform: rotate(90deg);
-}`
+      label > span::after {
+        top: 0;
+        transform: rotate(90deg);
+      }
+      `
       : ``}
 `;
 
@@ -254,6 +256,7 @@ export const MenuBox = styled.ul<{ visible: boolean }>`
 export const StyledMarkdown = styled.div`
   font-size: 20px;
   text-align: left;
+  font-weight: 400;
 
   p,
   pre,
@@ -328,5 +331,97 @@ export const StyledContainer = styled.div`
     min-height: calc(100vh - 101px);
     background-color: #e4e4e4;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+`;
+
+export const ModalBackground = styled.div<{ showModal: boolean }>`
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 500;
+  animation: ${({ showModal }) => (showModal ? fadeIn : null)} 0.2s linear;
+`;
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`;
+
+export const ModalBody = styled.div`
+  width: 90vw;
+  padding: 0px 10px;
+  max-width: 800px;
+  height: auto;
+  max-height: 90vh;
+  border-radius: 10px;
+  border: none;
+  background-color: #e4e4e4;
+  z-index: 600;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+`;
+
+export const PreviewContent = styled.div`
+  max-width: 560px;
+  width: 80%;
+  margin: 5px auto;
+  padding: 0 20px;
+  background-color: #d6d6d6;
+  height: auto;
+  overflow-y: scroll;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+`;
+
+export const PreviewTitle = styled.p`
+  font-size: 36px;
+  font-weight: 500;
+  font-family: 'Noto Sans TC', sans-serif;
+  margin: 5px auto;
+`;
+
+export const ModalClose = styled.div`
+  z-index: 650;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 0;
+  cursor: pointer;
+  justify-content: left;
+  flex-direction: row-reverse;
+  position: relative;
+  top: 32px;
+  right: 12px;
+
+  > span,
+  > span::after {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: #000000;
+    content: '';
+  }
+
+  > span {
+    transform: rotate(45deg);
+  }
+
+  > span::after {
+    transform: rotate(90deg);
   }
 `;
