@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Input from '../../components/Input';
-import { StyledNewNote, Button, PreviewContent, PreviewTitle } from '../../components/styles';
-import Textarea from '../../components/Textarea';
-import Modal from '../../components/Modal';
-import Content from '../../components/Content';
+import Input from '../components/Input';
+import { StyledNewNote, Button, PreviewContent, PreviewTitle } from '../components/styles';
+import Textarea from '../components/Textarea';
+import Modal from '../components/Modal';
+import Content from '../components/Content';
 
 function NewNote() {
   const [title, setTitle] = useState<string>('');

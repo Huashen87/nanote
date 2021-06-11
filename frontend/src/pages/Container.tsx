@@ -1,7 +1,7 @@
 import { Switch, Route } from 'react-router';
-import { StyledContainer } from '../../components/styles';
-import NewNote from '../NewNote/NewNote';
-import Note from '../Note/Note';
+import { StyledContainer } from '../components/styles';
+import NewNote from './NewNote';
+import Note from './Note';
 
 function Container() {
   return (
