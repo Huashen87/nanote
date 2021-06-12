@@ -1,5 +1,6 @@
 import { Switch, Route } from 'react-router';
 import { StyledContainer } from '../components/styles';
+import MyNotes from './MyNotes';
 import NewNote from './NewNote';
 import Note from './Note';
 
@@ -12,7 +13,7 @@ function Container() {
             <h1>主頁</h1>
           </Route>
           <Route path="/my-notes">
-            <h1>我的筆記</h1>
+            <MyNotes />
           </Route>
           <Route path="/public-notes">
             <h1>公開的筆記</h1>

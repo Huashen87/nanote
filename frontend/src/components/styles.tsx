@@ -71,7 +71,7 @@ export const StyledTextArea = styled.textarea<{ inNote: boolean }>`
   width: 100%;
   padding: 0;
   height: 100%;
-  min-height: calc(100vh - 288px);
+  min-height: calc(100vh - 292px);
   font-family: 'Noto Sans TC', sans-serif;
   resize: none;
   word-wrap: break-word;
@@ -289,10 +289,10 @@ export const StyledNote = styled.div`
 `;
 
 export const StyledTags = styled.div`
-  margin: 10px auto;
+  margin: 10px 0;
   min-height: 32px;
   padding: 5px 0;
-  width: calc(100% - 40px);
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   background-color: #d4d4d4;
@@ -334,11 +334,17 @@ export const StyledContainer = styled.div`
   > div {
     margin: 12px auto;
     width: 100%;
+    padding: 2px 0;
     max-width: 600px;
     height: auto;
-    min-height: calc(100vh - 101px);
+    min-height: calc(100vh - 105px);
     background-color: #e4e4e4;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  > div > a {
+    text-decoration: none;
+    color: #000000;
   }
 `;
 
@@ -448,4 +454,22 @@ export const FlexRow = styled.div<{ width: string }>`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+`;
+
+export const StyledPreviewNote = styled.div`
+  width: auto;
+  margin: 20px;
+  background-color: #e4e4e4;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+
+  > span {
+    padding: 5px;
+    font-size: 36px;
+    font-weight: 400;
+    max-width: 100%;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+  }
 `;
