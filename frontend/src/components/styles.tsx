@@ -1,10 +1,10 @@
 import styled, { keyframes } from 'styled-components';
 
 export const Button = styled.button`
-  margin: 10px auto;
+  margin: 12px auto;
   background-color: #acacac;
   color: #000000;
-  width: fit-content;
+  width: max-content;
   font-size: 28px;
   height: 32px;
   line-height: 32px;
@@ -71,7 +71,7 @@ export const StyledTextArea = styled.textarea<{ inNote: boolean }>`
   width: 100%;
   padding: 0;
   height: 100%;
-  min-height: calc(100vh - 284px);
+  min-height: calc(100vh - 288px);
   font-family: 'Noto Sans TC', sans-serif;
   resize: none;
   word-wrap: break-word;
@@ -93,26 +93,25 @@ export const StyledTextArea = styled.textarea<{ inNote: boolean }>`
   `}
 `;
 
-export const StyledInput = styled.input<{ inNote: boolean }>`
+export const StyledInput = styled.input<{ width: string; inNote: boolean }>`
   margin: 10px auto;
   padding: 0;
-  width: 100%;
   height: 32px;
   font-size: 28px;
   line-height: 32px;
   font-family: 'Noto Sans TC', sans-serif;
+  width: ${({ width }) => width};
   ${({ inNote }) =>
     inNote
       ? `
-  border: none;
-  background-color: #e4e4e4;
-  font-size: 32px;
-  &:focus {
-    outline: none;
-  }`
+      border: none;
+      background-color: #e4e4e4;
+      font-size: 32px;
+      &:focus {
+        outline: none;
+      }`
       : `
-  font-size: 28px;
-  `}
+      font-size: 28px;`}
 `;
 
 export const StyledNewNote = styled.form`
@@ -291,24 +290,33 @@ export const StyledNote = styled.div`
 
 export const StyledTags = styled.div`
   margin: 10px auto;
+  min-height: 32px;
   padding: 5px 0;
-  min-width: calc(100% - 40px);
-  width: auto;
+  width: calc(100% - 40px);
   display: flex;
   justify-content: flex-start;
   background-color: #d4d4d4;
   border-radius: 5px;
-  overflow-x: auto;
+  overflow-x: scroll;
 
-  a {
+  a,
+  div {
     width: auto;
     margin: auto 5px;
     padding: 3px 5px;
-    background-color: #000000;
     border-radius: 5px;
     text-decoration: none;
     color: #ffffff;
     white-space: nowrap;
+  }
+
+  a {
+    background-color: #000000;
+  }
+
+  div {
+    background-color: #d00000;
+    cursor: pointer;
   }
 
   span {
@@ -387,7 +395,7 @@ export const PreviewContent = styled.div`
 `;
 
 export const PreviewTitle = styled.p`
-  font-size: 36px;
+  font-size: 48px;
   font-weight: 500;
   font-family: 'Noto Sans TC', sans-serif;
   margin: 5px auto;
@@ -424,4 +432,20 @@ export const ModalClose = styled.div`
   > span::after {
     transform: rotate(90deg);
   }
+`;
+
+export const StyledSearchBar = styled.form`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 90%;
+  margin: auto;
+`;
+
+export const FlexRow = styled.div<{ width: string }>`
+  width: ${({ width }) => width};
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 `;

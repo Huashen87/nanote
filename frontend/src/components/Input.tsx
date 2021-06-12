@@ -5,10 +5,22 @@ interface InputProps {
   setValue: Function;
   placeholder?: string;
   inNote?: boolean;
+  width: string;
+  require?: boolean;
+  disabled?: boolean;
 }
 
 function Input(props: InputProps) {
-  const { type = 'text', value, setValue, placeholder = '', inNote = false } = props;
+  const {
+    type = 'text',
+    value,
+    setValue,
+    placeholder = '',
+    inNote = false,
+    width,
+    require = true,
+    disabled = false,
+  } = props;
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value);
 
   return (
@@ -18,6 +30,9 @@ function Input(props: InputProps) {
       onChange={handleOnChange}
       placeholder={placeholder}
       inNote={inNote}
+      width={width}
+      required={require}
+      disabled={disabled}
     ></StyledInput>
   );
 }
