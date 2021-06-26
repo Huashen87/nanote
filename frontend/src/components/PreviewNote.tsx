@@ -17,13 +17,13 @@ function PreviewNote(props: { data: PreviewNoteProps }) {
   } = props;
 
   return (
-    <Link to={'/note/' + id}>
-      <StyledPreviewNote>
+    <StyledPreviewNote>
+      <Link to={'/note/' + id}>
         <span>{title}</span>
-        <Tags tags={tags} />
-        <Info author={author} updatedAt={updatedAt} />
-      </StyledPreviewNote>
-    </Link>
+      </Link>
+      <Tags tags={tags} />
+      <Info author={author} updatedAt={updatedAt} />
+    </StyledPreviewNote>
   );
 }
 

@@ -1,11 +1,19 @@
+import { useEffect, useState } from 'react';
+import Filter, { FilterType } from '../components/Filter';
 import Notes from '../components/Notes';
 import { PreviewNoteProps } from '../components/PreviewNote';
 
 function MyNotes() {
+  const [filter, setFilter] = useState<FilterType>({ keyword: {}, orderBy: 'recommend' });
+
+  useEffect(() => {
+    console.log(filter);
+  }, [filter]);
+
   const mockData: PreviewNoteProps[] = [
     {
       id: '123',
-      title: 'Nanote 筆記',
+      title: 'Nanote 筆記123$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$',
       tags: [
         { tagName: 'Introduction' },
         { tagName: 'Hello World' },
@@ -23,7 +31,7 @@ function MyNotes() {
     },
     {
       id: '1234',
-      title: 'Nanote 筆記',
+      title: 'Nanote 筆記1234',
       tags: [
         { tagName: 'Introduction' },
         { tagName: 'Hello World' },
@@ -41,7 +49,7 @@ function MyNotes() {
     },
     {
       id: '12345',
-      title: 'Nanote 筆記',
+      title: 'Nanote 筆記12345',
       tags: [
         { tagName: 'Introduction' },
         { tagName: 'Hello World' },
@@ -59,7 +67,16 @@ function MyNotes() {
     },
   ];
 
-  return <Notes notes={mockData} />;
+  const titleOptions = mockData.map((data) => {
+    return { value: 'title-' + data.title, label: data.title };
+  });
+
+  return (
+    <>
+      <Filter titleOptions={titleOptions} filter={filter} setFilter={setFilter} />
+      <Notes notes={mockData} />
+    </>
+  );
 }
 
 export default MyNotes;

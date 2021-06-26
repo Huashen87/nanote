@@ -285,6 +285,7 @@ export const StyledNote = styled.div`
     max-width: 100%;
     overflow-x: hidden;
     text-overflow: ellipsis;
+    display: block;
   }
 `;
 
@@ -311,7 +312,7 @@ export const StyledTags = styled.div`
   }
 
   a {
-    background-color: #000000;
+    background-color: #303030;
   }
 
   div {
@@ -453,7 +454,7 @@ export const FlexRow = styled.div<{ width: string }>`
   margin: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
 `;
 
 export const StyledPreviewNote = styled.div`
@@ -464,12 +465,18 @@ export const StyledPreviewNote = styled.div`
   border-radius: 10px;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
 
-  > span {
+  > a {
+    text-decoration: none;
+  }
+
+  > a > span {
     padding: 5px;
     font-size: 36px;
     font-weight: 400;
-    max-width: 100%;
+    width: 100%;
     overflow-x: hidden;
     text-overflow: ellipsis;
+    color: #000000;
+    display: block;
   }
 `;
